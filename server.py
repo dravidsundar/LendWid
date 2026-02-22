@@ -196,6 +196,10 @@ def txn_add_entry(user, client_id, amount, date_str, status):
 #                       ROUTES
 # =====================================================
 
+@app.route('/', methods=["GET"])
+def Home():
+    return jsonify({'status':'ok','msg':'Api is Live'}), 200
+
 @app.route("/healthz", methods=["GET"])
 def healthz():
     return jsonify({"status": "ok"}), 200
